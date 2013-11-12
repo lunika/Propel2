@@ -201,7 +201,7 @@ public function doSelect(\$con = null)
             throw new PropelException(sprintf('Unable to execute SELECT statement [%s]', \$sql), 0, \$e);
         }
 
-    return \$stmt;
+    return \$con->getDataFetcher(\$stmt);
 }
 ";
     }
@@ -262,7 +262,7 @@ public function doCount(\$con = null)
         throw new PropelException(sprintf('Unable to execute COUNT statement [%s]', \$sql), 0, \$e);
     }
 
-    return \$stmt;
+    return \$con->getDataFetcher(\$stmt);
 }
 ";
     }
